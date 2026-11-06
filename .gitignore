@@ -1,0 +1,52 @@
+# Unity-generated state
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Ll]ogs/
+**/[Uu]ser[Ss]ettings/
+**/[Bb]uild/
+**/[Bb]uilds/
+**/MemoryCaptures/
+**/Recordings/
+*.csproj
+*.sln
+*.suo
+*.user
+*.pidb
+*.booproj
+*.opendb
+*.VC.db
+.vs/
+.idea/
+
+# Generated native builds and local test files
+/Tejas-Impact-*/
+/outputs/
+/work/
+*.log
+*.tmp
+journey*.json
+journey*.json.bak
+invite.private.txt
+
+# Obtain the pinned helper with scripts/fetch-network-helper.ps1
+/game/Assets/StreamingAssets/Networking/cloudflared.exe
+
+# Local tools, hosting identity and credentials
+.codex/
+.agents/
+.openai/
+.aws/
+node_modules/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+credentials.json
+.DS_Store
+Thumbs.db

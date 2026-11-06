@@ -1,0 +1,22 @@
+{
+  "windows": {
+    "available": true,
+    "label": "Teja’s Impact for Windows",
+    "filename": "Tejas-Impact-Windows-v0.7.zip",
+    "mime": "application/zip",
+    "version": "0.7",
+    "bytes": 56181343,
+    "sha256": "3bb313882dfdc118e3924869d75228c4728acf152bf706db0ea460792662dac2",
+    "url": "https://github.com/TejaPriyan/Teja-Imapct/releases/download/v0.7.0/Tejas-Impact-Windows-v0.7.zip"
+  },
+  "android": {
+    "available": true,
+    "label": "Teja’s Impact for Android",
+    "filename": "Tejas-Impact-Android-v0.7.apk",
+    "mime": "application/vnd.android.package-archive",
+    "version": "0.7",
+    "bytes": 24777298,
+    "sha256": "3858bb356be6c4be1fdcc4dbdba14f373430a2008aa51b5f80837a2874d686f0",
+    "url": "https://github.com/TejaPriyan/Teja-Imapct/releases/download/v0.7.0/Tejas-Impact-Android-v0.7.apk"
+  }
+}

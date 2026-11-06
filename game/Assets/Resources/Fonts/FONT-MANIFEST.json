@@ -1,0 +1,22 @@
+[
+  {
+    "file": "Rubik-Regular.ttf",
+    "sha256": "ec2daa09e47c19fdf693ff64f0e6fc0469984f8884b2e7081abef5e245c60dcc",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/rubik/Rubik%5Bwght%5D.ttf",
+    "source_sha256": "1b3a7437ba2af80e465e773ed60c5036d1ba6ace492d89046dbcf18fb31e4e88",
+    "license": "SIL OFL 1.1",
+    "static": true,
+    "family": "Rubik",
+    "style": "Regular"
+  },
+  {
+    "file": "Rajdhani-SemiBold.ttf",
+    "sha256": "94bbd25a18ca665999feb05a537de9fd2b860dcfb78bbe9ca00270825bf235da",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/rajdhani/Rajdhani-SemiBold.ttf",
+    "source_sha256": "94bbd25a18ca665999feb05a537de9fd2b860dcfb78bbe9ca00270825bf235da",
+    "license": "SIL OFL 1.1",
+    "static": true,
+    "family": "Rajdhani",
+    "style": "SemiBold"
+  }
+]

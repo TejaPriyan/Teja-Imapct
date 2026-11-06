@@ -1,0 +1,5 @@
+Genshin Impact - Eula
+Author: Meta Headz (https://sketchfab.com/MetaHeadz)
+Source: https://sketchfab.com/3d-models/genshin-impact-eula-932cc401fc2a456ba424aa102f339f4d
+Embedded license: CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+User supplied the GLB. Prototype modifications: coordinate conversion, generated skeleton, skin weights and authored animation. No official association with HoYoverse. Noncommercial prototype.

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b171e">
+  <meta name="description" content="Play Teja's Impact in your desktop browser. Explore Aetherfall, complete missions and confront the Rift Warden.">
+  <title>Play Teja's Impact — Browser edition</title>
+  <style>
+    :root{color-scheme:dark;--gold:#e6be72;--ink:#0b171e;--muted:#b6c6ca}*{box-sizing:border-box}body{margin:0;background:var(--ink);color:#f4f2e8;font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}a{color:var(--gold)}button,a{touch-action:manipulation}button{font:inherit;cursor:pointer;border:1px solid #55727a;border-radius:6px;padding:10px 20px;background:#17313b;color:#fff}button:hover{background:#244753}button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}header{min-height:66px;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #29404a}header strong{letter-spacing:.09em;font-size:14px}header a{text-decoration:none;font-size:14px}.tools{display:flex;align-items:center;gap:16px}.game-shell{position:relative;width:100%;max-width:1440px;aspect-ratio:16/9;margin:0 auto;background:#071116;overflow:hidden}canvas{display:block;width:100%;height:100%;outline:0;background:#071116}.overlay{position:absolute;inset:0;display:grid;align-content:center;justify-items:center;padding:32px;text-align:center;background:radial-gradient(ellipse at top,#1c4148,#0b171e 72%)}.overlay[hidden]{display:none}.eyebrow{font-size:12px;letter-spacing:.23em;color:var(--gold);margin:0 0 12px}h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(32px,6vw,68px);line-height:1.08;margin:0 0 20px}.overlay p{max-width:540px;color:var(--muted);margin:0 0 24px}.primary{background:var(--gold);color:#10242b;border-color:var(--gold);font-weight:650}.primary:hover{background:#f5d49b}progress{width:min(360px,80vw);height:8px;accent-color:var(--gold);margin:0 0 16px}.subtle{font-size:13px;color:var(--muted);margin-top:16px}footer{padding:20px 24px;max-width:1180px;margin:auto;display:flex;gap:28px;justify-content:space-between;flex-wrap:wrap;color:var(--muted);font-size:13px}footer p{margin:0;max-width:620px}kbd{display:inline-block;padding:1px 5px;border:1px solid #50636b;border-radius:3px;color:#eee;font:12px system-ui}.status{font-size:14px}.error{color:#ffc4ad!important}#fullscreen:disabled{opacity:.5;cursor:default}:fullscreen.game-shell{max-width:none;width:100vw;height:100vh;aspect-ratio:auto}#rotate{display:none}@media(max-width:700px){header{padding:12px 16px}header strong{font-size:12px}.tools{gap:10px}.tools a{font-size:12px}button{padding:8px 12px}.game-shell{min-height:420px;aspect-ratio:auto}.overlay{padding:24px}.overlay p{font-size:14px}footer{padding:18px;gap:14px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <header><a href="../" aria-label="Back to Teja's Impact website"><strong>TEJA'S IMPACT</strong></a><div class="tools"><a href="../#how-to-play">Controls &amp; help</a><button id="fullscreen" disabled>Fullscreen</button></div></header>
+  <main class="game-shell" id="game-shell">
+    <canvas id="unity-canvas" width="1280" height="720" tabindex="0" aria-label="Teja's Impact game. WASD to move, mouse to look, left click to attack, Escape to pause."></canvas>
+    <section class="overlay" id="loader" aria-labelledby="game-title">
+      <div class="eyebrow">AETHERFALL / BROWSER EDITION</div>
+      <h1 id="game-title">Your journey awaits.</h1>
+      <p id="intro">A solo adventure in your browser. Use a keyboard and mouse, and allow site storage to continue your journey later.</p>
+      <button class="primary" id="start">Enter Aetherfall</button>
+      <progress id="progress" value="0" max="1" hidden aria-label="Game download progress"></progress>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <button class="primary" id="retry" hidden>Reload game</button>
+      <div class="subtle" id="hint">Desktop / laptop · WebGL 2 · Audio starts with your interaction</div>
+      <a id="download" href="../#download" hidden>Explore downloads and device support</a>
+    </section>
+  </main>
+  <footer><p><kbd>W A S D</kbd> Move &nbsp; <kbd>Mouse</kbd> Look &nbsp; <kbd>Left click</kbd> Attack &nbsp; <kbd>Space</kbd> Jump &nbsp; <kbd>Esc</kbd> Pause. Click inside the game to capture the mouse.</p><p>Progress saves in this browser. Clearing site data removes it. Online co-op is available in the Windows download.</p></footer>
+  <script>
+    (() => {
+      const canvas=document.getElementById('unity-canvas'),shell=document.getElementById('game-shell'),loader=document.getElementById('loader'),start=document.getElementById('start'),progress=document.getElementById('progress'),status=document.getElementById('status'),fullscreen=document.getElementById('fullscreen');
+      let instance=null,loading=false;
+      const config={
+        dataUrl:'Build/{{{ DATA_FILENAME }}}',frameworkUrl:'Build/{{{ FRAMEWORK_FILENAME }}}',codeUrl:'Build/{{{ CODE_FILENAME }}}',
+#if MEMORY_FILENAME
+        memoryUrl:'Build/{{{ MEMORY_FILENAME }}}',
+#endif
+#if SYMBOLS_FILENAME
+        symbolsUrl:'Build/{{{ SYMBOLS_FILENAME }}}',
+#endif
+        streamingAssetsUrl:'StreamingAssets',companyName:{{{ JSON.stringify(COMPANY_NAME) }}},productName:{{{ JSON.stringify(PRODUCT_NAME) }}},productVersion:{{{ JSON.stringify(PRODUCT_VERSION) }}},
+        devicePixelRatio:Math.min(window.devicePixelRatio||1,1.5),
+        showBanner:(message,type)=>{if(type==='error')fail('The game could not start. Reload this page, or try the Windows download.');else console.warn(message);}
+      };
+      function fail(message){console.error('[Teja browser startup]',message);loading=false;loader.hidden=false;progress.hidden=true;start.hidden=true;status.classList.add('error');status.textContent=message;document.getElementById('retry').hidden=false;document.getElementById('download').hidden=false;}
+      document.getElementById('retry').addEventListener('click',()=>window.location.reload());
+      const mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+      if(mobile){start.hidden=true;document.getElementById('intro').textContent='For touch controls and landscape play, use the Android download. This browser edition is designed for a laptop or desktop. An installable iPhone edition is not available yet.';document.getElementById('hint').hidden=true;document.getElementById('download').hidden=false;}
+      start.addEventListener('click',()=>{
+        if(loading||instance)return;
+        if(!window.WebAssembly){fail('This browser does not support WebAssembly. Use a current desktop browser.');return;}
+        const probe=document.createElement('canvas');const gl=probe.getContext('webgl2');
+        if(!gl){fail('WebGL 2 is unavailable. Enable hardware acceleration in your browser, or use the Windows download.');return;}
+        const lose=gl.getExtension('WEBGL_lose_context');if(lose)lose.loseContext();
+        loading=true;start.hidden=true;progress.hidden=false;status.textContent='Downloading Aetherfall…';
+        const script=document.createElement('script');script.src='Build/{{{ LOADER_FILENAME }}}';
+        script.onerror=()=>fail('The game files could not be downloaded. Check your connection and reload this page.');
+        script.onload=()=>createUnityInstance(canvas,config,value=>{progress.value=value;status.textContent=value<.9?'Downloading Aetherfall… '+Math.round(value*100)+'%':'Preparing your world…';}).then(game=>{instance=game;loading=false;loader.hidden=true;fullscreen.disabled=false;canvas.focus();}).catch(error=>{console.error(error);fail('The game could not start. Close other heavy tabs, then reload. The Windows download is also available.');});
+        document.body.appendChild(script);
+      });
+      fullscreen.addEventListener('click',()=>{if(instance){instance.SetFullscreen(1);canvas.focus();}});
+      canvas.addEventListener('contextmenu',event=>event.preventDefault());
+      window.addEventListener('keydown',event=>{if(document.activeElement===canvas&&['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.code))event.preventDefault();},{passive:false});
+    })();
+  </script>
+</body>
+</html>

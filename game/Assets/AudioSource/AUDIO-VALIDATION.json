@@ -1,0 +1,158 @@
+{
+  "result": "PASS",
+  "clips": 24,
+  "decoded_float_bytes": 15169516,
+  "checks": "WAV format, hashes, durations, peaks, RMS, DC offset, transient-bounded music seams, zero-endpoint effects, memory budget",
+  "assets": [
+    {
+      "file": "music-exploration.wav",
+      "seconds": 40.0,
+      "peak": 0.72995,
+      "rms": 0.176484,
+      "seam_step": 0.055847,
+      "adjacent_step_99th_percentile": 0.089081
+    },
+    {
+      "file": "music-combat.wav",
+      "seconds": 20.0,
+      "peak": 0.72995,
+      "rms": 0.11516,
+      "seam_step": 0.052917,
+      "adjacent_step_99th_percentile": 0.09259
+    },
+    {
+      "file": "music-boss.wav",
+      "seconds": 20.0,
+      "peak": 0.72995,
+      "rms": 0.126034,
+      "seam_step": 0.020966,
+      "adjacent_step_99th_percentile": 0.072296
+    },
+    {
+      "file": "sword1.wav",
+      "seconds": 0.24,
+      "peak": 0.51828,
+      "rms": 0.115262
+    },
+    {
+      "file": "sword2.wav",
+      "seconds": 0.28,
+      "peak": 0.625702,
+      "rms": 0.117339
+    },
+    {
+      "file": "sword3.wav",
+      "seconds": 0.36,
+      "peak": 0.547974,
+      "rms": 0.120816
+    },
+    {
+      "file": "sidearm.wav",
+      "seconds": 0.26,
+      "peak": 0.494263,
+      "rms": 0.110957
+    },
+    {
+      "file": "rifle.wav",
+      "seconds": 0.18,
+      "peak": 0.518036,
+      "rms": 0.132358
+    },
+    {
+      "file": "reload.wav",
+      "seconds": 0.6499773242630386,
+      "peak": 0.3461,
+      "rms": 0.060852
+    },
+    {
+      "file": "reload_done.wav",
+      "seconds": 0.42,
+      "peak": 0.543335,
+      "rms": 0.149512
+    },
+    {
+      "file": "hit.wav",
+      "seconds": 0.22,
+      "peak": 0.469696,
+      "rms": 0.088144
+    },
+    {
+      "file": "boss_hit.wav",
+      "seconds": 0.36997732426303853,
+      "peak": 0.538574,
+      "rms": 0.084683
+    },
+    {
+      "file": "hurt.wav",
+      "seconds": 0.34,
+      "peak": 0.436127,
+      "rms": 0.098663
+    },
+    {
+      "file": "coin.wav",
+      "seconds": 0.31002267573696146,
+      "peak": 0.51709,
+      "rms": 0.142227
+    },
+    {
+      "file": "treasure.wav",
+      "seconds": 1.2,
+      "peak": 0.653107,
+      "rms": 0.157834
+    },
+    {
+      "file": "heal.wav",
+      "seconds": 0.9,
+      "peak": 0.577484,
+      "rms": 0.152904
+    },
+    {
+      "file": "level.wav",
+      "seconds": 1.5,
+      "peak": 0.652527,
+      "rms": 0.158336
+    },
+    {
+      "file": "victory.wav",
+      "seconds": 2.4,
+      "peak": 0.705017,
+      "rms": 0.149587
+    },
+    {
+      "file": "ui.wav",
+      "seconds": 0.16,
+      "peak": 0.187622,
+      "rms": 0.065028
+    },
+    {
+      "file": "jump.wav",
+      "seconds": 0.26,
+      "peak": 0.211151,
+      "rms": 0.056255
+    },
+    {
+      "file": "dodge.wav",
+      "seconds": 0.24,
+      "peak": 0.153961,
+      "rms": 0.04431
+    },
+    {
+      "file": "footstep.wav",
+      "seconds": 0.1,
+      "peak": 0.145721,
+      "rms": 0.045684
+    },
+    {
+      "file": "burst.wav",
+      "seconds": 0.9500226757369614,
+      "peak": 0.514984,
+      "rms": 0.116655
+    },
+    {
+      "file": "warning.wav",
+      "seconds": 0.6499773242630386,
+      "peak": 0.476654,
+      "rms": 0.208493
+    }
+  ]
+}
