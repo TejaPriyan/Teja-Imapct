@@ -6,6 +6,8 @@
 **/[Uu]ser[Ss]ettings/
 **/[Bb]uild/
 **/[Bb]uilds/
+!/website/play/Build/
+!/website/play/Build/**
 **/MemoryCaptures/
 **/Recordings/
 *.csproj
