@@ -1,0 +1,16 @@
+{
+  "product": "Teja's Impact",
+  "version": "0.7.1",
+  "package": "com.tejagames.tejasimpact",
+  "versionCode": 8,
+  "filename": "Tejas-Impact-Android-v0.7.1.apk",
+  "bytes": 24777302,
+  "sha256": "82abc85bc54c625015c2b323175b824de7711d45d2f4aea9525b7b07386fe91e",
+  "minimumSdk": 26,
+  "targetSdk": 36,
+  "architecture": "arm64-v8a",
+  "graphics": "OpenGL ES 3",
+  "signing": "APK Signature Scheme v2; Android Debug certificate",
+  "distribution": "Direct test APK; not a Google Play release",
+  "physicalDeviceValidated": false
+}

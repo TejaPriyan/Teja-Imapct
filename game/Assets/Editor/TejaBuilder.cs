@@ -15,7 +15,7 @@ public static class TejaBuilder {
         EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(),"Assets/Scenes/Aetherfall.unity");
         EditorBuildSettings.scenes = new[]{ new EditorBuildSettingsScene("Assets/Scenes/Aetherfall.unity",true) };
         PlayerSettings.companyName="Teja Games";PlayerSettings.productName="Teja's Impact";
-        PlayerSettings.bundleVersion="0.7.0";PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Standalone,"com.tejagames.tejasimpact");
+        PlayerSettings.bundleVersion="0.7.1";PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Standalone,"com.tejagames.tejasimpact");
         PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Android,"com.tejagames.tejasimpact");
         PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.iOS,"com.tejagames.tejasimpact");
         PlayerSettings.defaultScreenWidth=1280;PlayerSettings.defaultScreenHeight=720;

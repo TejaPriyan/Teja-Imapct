@@ -6,9 +6,9 @@
 
 - [Game website and browser edition](https://tejapriyan.github.io/Teja-Imapct/) — published by the repository's GitHub Pages workflow; use a laptop or desktop for browser play.
 - [Windows x64 ZIP](https://github.com/TejaPriyan/Teja-Imapct/releases/download/v0.7.0/Tejas-Impact-Windows-v0.7.zip) — extract the entire ZIP, then open `TejasImpact.exe`. Includes solo play and two-player internet rooms.
-- [Android APK](https://github.com/TejaPriyan/Teja-Imapct/releases/download/v0.7.0/Tejas-Impact-Android-v0.7.apk) — Android 8.0+, ARM64 and OpenGL ES 3. Review the phone's installation prompt, launch and turn the phone horizontally. Solo play; directly distributed test build, not a Play Store release.
+- [Android APK v0.7.1](https://github.com/TejaPriyan/Teja-Imapct/releases/download/v0.7.1/Tejas-Impact-Android-v0.7.1.apk) — Android 8.0+, ARM64, OpenGL ES 3 and Android API 36 target. Review the phone's installation prompt, launch and turn the phone horizontally. Solo play; directly distributed test build, not a Play Store release.
 - [Complete Unity source ZIP](https://github.com/TejaPriyan/Teja-Imapct/releases/download/v0.7.0/Tejas-Impact-Unity-Source-v0.7.zip) — includes the pinned Windows networking helper and retained licenses.
-- [Release notes and files](https://github.com/TejaPriyan/Teja-Imapct/releases/tag/v0.7.0).
+- [Latest Android compatibility release](https://github.com/TejaPriyan/Teja-Imapct/releases/tag/v0.7.1) and [v0.7 release notes/source files](https://github.com/TejaPriyan/Teja-Imapct/releases/tag/v0.7.0).
 
 The website in [`website/`](website/) includes the desktop browser game, requirements, controls, installation help and credits. Browser play requires a laptop/desktop browser with WebGL 2, WebAssembly and hardware acceleration. Run it over HTTP/HTTPS, not by opening `index.html` directly from disk. Browser and Android editions are solo. Each edition keeps separate local saves; there are no accounts or cloud saves.
 
